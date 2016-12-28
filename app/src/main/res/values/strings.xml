@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Kid Point</string>
+    <string name="action_settings">Settings</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name_formatted"><![CDATA[<strong>Kid</strong> Point]]></string>
+    <string name="welcome_intro_fragment">Fun Interactive Questions</string>
+    <string name="next">NEXT :)</string>
+    <string name="skip">SKIP :(</string>
+    <string name="welcome">Welcome to Kid Point</string>
+    <string name="description">We offer simple questions to improve your Math</string>
+    <string name="gotit">Got it ;)</string>
+    <string name="tut_subj">Choose a subject you like and answer the questions that follow</string>
+    <string name="tut_points">You get 5 points for each question you get right and lose 1 point for each wrong answer</string>
+    <string name="badge_desc">Earn badges for every 400 points you get</string>
+</resources>

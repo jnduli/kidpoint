@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView2"
+        android:src="@drawable/introimage"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tut_subj"
+        android:textSize="20dp"
+        android:id="@+id/textViewwel"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tut_points"
+        android:textSize="20dp"
+        android:id="@+id/textView4"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/gotit"
+        android:textColor="@color/white"
+        android:id="@+id/gotit"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/dark_pink_button"
+        android:layout_marginTop="@dimen/welcome_intro_fragment"/>
+</LinearLayout>

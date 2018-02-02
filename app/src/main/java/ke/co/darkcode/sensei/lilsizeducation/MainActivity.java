@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
 
+import java.util.HashMap;
 import java.util.List;
 
 import ke.co.darkcode.sensei.lilsizeducation.fragments.IntroductionFragment;
@@ -23,7 +24,7 @@ import ke.co.darkcode.sensei.lilsizeducation.questions.MathQuestionGenerator;
 
 public class MainActivity extends AppCompatActivity implements MainActivityFragment.MainActivityFragmentContainer{
 
-    List<MathQuestion> mathQuestions;
+    List<HashMap> mathQuestions;
     int position;
     FragmentTransaction transaction;
     int score;
@@ -50,7 +51,6 @@ public class MainActivity extends AppCompatActivity implements MainActivityFragm
             }
         });
 
-
         position =-1;
         score =0;
         changeFragment();
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityFragm
     private MainActivityFragment getCurrentFragment(){
         MainActivityFragment mainActivityFragment = null;
         if(position<0){
-            mathQuestions = MathQuestionGenerator.generateQuestions(5);
+            mathQuestions = MathQuestionGenerator.generateQuestions(10);
             position++;
             mainActivityFragment = new IntroductionFragment();
         }else if(position >= mathQuestions.size()){
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityFragm
     }
 
     @Override
-    public MathQuestion getNextQuestion() {
+    public HashMap getNextQuestion() {
         return mathQuestions.get(position++);
     }
 

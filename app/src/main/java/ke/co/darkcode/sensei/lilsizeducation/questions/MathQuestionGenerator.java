@@ -1,6 +1,7 @@
 package ke.co.darkcode.sensei.lilsizeducation.questions;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
@@ -8,17 +9,13 @@ import java.util.Random;
  * Created by sensei on 23/12/15.
  */
 public class MathQuestionGenerator {
-    List<MathQuestion> questions;
 
-    public static List<MathQuestion> generateQuestions(int no){
-        List<MathQuestion> questions = new ArrayList<>();
+    public static List<HashMap> generateQuestions(int no){
+        MathQuestions generator = new MathQuestions(3);
+        List<HashMap> questions = new ArrayList<>();
         for(int i=0; i<no; i++){
-            questions.add(generateQuestion());
+            questions.add(generator.generateQuestion());
         }
         return questions;
-    }
-
-    private static MathQuestion generateQuestion(){
-        return null;
     }
 }

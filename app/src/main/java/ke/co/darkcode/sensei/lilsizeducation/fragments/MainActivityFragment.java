@@ -2,6 +2,8 @@ package ke.co.darkcode.sensei.lilsizeducation.fragments;
 
 import android.app.Fragment;
 
+import java.util.HashMap;
+
 import ke.co.darkcode.sensei.lilsizeducation.questions.MathQuestion;
 
 /**
@@ -11,7 +13,7 @@ public class MainActivityFragment extends Fragment {
 
     public interface MainActivityFragmentContainer{
 
-        public MathQuestion getNextQuestion();
+        public HashMap getNextQuestion();
         public void currentQuestionFinished(boolean correct);
         public void getNextFragment();
     }

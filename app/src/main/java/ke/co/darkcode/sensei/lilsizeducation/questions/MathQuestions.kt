@@ -5,6 +5,9 @@ package ke.co.darkcode.sensei.lilsizeducation.questions
  */
 class MathQuestions(val level: Int){
 
+    companion object {
+        val MAX_MATHS_LEVEL = 6
+    }
 
     // TODO: fix and test choices, fix and test answer
     fun generateQuestion(): HashMap<String, Any> {

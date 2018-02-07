@@ -1,6 +1,7 @@
 package ke.co.darkcode.sensei.lilsizeducation;
 
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.SoundPool;
@@ -9,7 +10,9 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import java.util.HashMap;
@@ -21,6 +24,7 @@ import ke.co.darkcode.sensei.lilsizeducation.fragments.QuestionFragment;
 import ke.co.darkcode.sensei.lilsizeducation.fragments.ResultsFragment;
 import ke.co.darkcode.sensei.lilsizeducation.questions.MathQuestion;
 import ke.co.darkcode.sensei.lilsizeducation.questions.MathQuestionGenerator;
+import ke.co.darkcode.sensei.lilsizeducation.settings.SettingsActivity;
 
 public class MainActivity extends AppCompatActivity implements MainActivityFragment.MainActivityFragmentContainer{
 
@@ -67,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityFragm
     private MainActivityFragment getCurrentFragment(){
         MainActivityFragment mainActivityFragment = null;
         if(position<0){
-            mathQuestions = MathQuestionGenerator.generateQuestions(10);
+            mathQuestions = MathQuestionGenerator.generateQuestions(10, this.getBaseContext());
             position++;
             mainActivityFragment = new IntroductionFragment();
         }else if(position >= mathQuestions.size()){
@@ -83,6 +87,18 @@ public class MainActivity extends AppCompatActivity implements MainActivityFragm
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.action_settings:
+                Intent settings = new Intent(this, SettingsActivity.class);
+                startActivity(settings);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override
